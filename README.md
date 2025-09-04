@@ -2,7 +2,8 @@
 
 [My Notes](notes.md)
 
-A brief description of the application here. blah blah blah, i'm not sure what is supposed to go here haha
+A brief description of the application here. blah blah blah, i'm not sure what is supposed to go here haha. YAY
+
 
 
 
