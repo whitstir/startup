@@ -35,7 +35,7 @@ Moving into a new apartment is exciting, but keeping everything organized with r
 sequenceDiagram
     actor You
     actor Website
-    You->>Website: Replace this with your design
+    You->>Website: Not part of the assingment, will do at later date.
 ```
 
 ### Key features
