@@ -17,11 +17,11 @@ A brief description of the application here.
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
-- [ ] Description of key features
-- [ ] Description of how you will use each technology
-- [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
+- [x] Proper use of Markdown
+- [x] A concise and compelling elevator pitch
+- [x] Description of key features
+- [x] Description of how you will use each technology
+- [x] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
@@ -29,7 +29,7 @@ Moving into a new apartment is exciting, but keeping everything organized with r
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](web_plan.jpg)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -42,20 +42,22 @@ sequenceDiagram
 
 ### Key features
 
-- Describe your key feature
-- Describe your key feature
-- Describe your key feature
+- **Smart Chore Management:** Automatically assigns daily, weekly, and monthly chores based off of a customizeable list
+- **Progress Tracking:** Easily view your own tasks and see your roommates' progress to keep accountability transparent and friendly
+- **Shared Calendar:** Let everyone know what's going on by putting events on the shared calendar
+- **Interactive House:** A fun, visual representation that improves as tasks are completed
+- **Secure Login:** Keep your personal information safe with secure HTTPS login
 
 ### Technologies
 
 I am going to use the required technologies in the following ways.
 
-- **HTML** - Description here
-- **CSS** - Description here
-- **React** - Description here
-- **Service** - Description here
-- **DB/Login** - Description here
-- **WebSocket** - Description here
+- **HTML** - Use correct HTML structure for the web application. There will be one main page with multiple other pages linking to different features of the application. 
+- **CSS** - Styling that looks fun and inviting, good design for the elements of the page and adequate whitespace.
+- **React** - Used to develop the interactive house, calendar, and progress bars. 
+- **Service** - Used for logging in and out, calls to a third party API
+- **DB/Login** - Store login information securely, chores lists, calendar items, 
+- **WebSocket** - Will keep track of progress bars on tasks, calendar updates, and allow for user collaboration.
 
 ## 🚀 AWS deliverable
 
