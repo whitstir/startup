@@ -14,7 +14,7 @@ Today I learned how to push and commit things into GitHub using the VS Code app,
 
 ## AWS
 
-Today I learned how to create an EC2 instance with the class AMI. I also figured out how to create the key pair and saved it to a safe place on my computer for easy and secure access. The command for shelling into the server is ssh -i [key pair file] ubuntu@[ip address] and will take me to the ubuntu home directory. Another thing that I learned is how to create an elastic IP address for my server instance. 
+Today I learned how to create an EC2 instance with the class AMI. I also figured out how to create the key pair and saved it to a safe place on my computer for easy and secure access. The command for shelling into the server is ssh -i [key pair file] ubuntu@[ip address] and will take me to the ubuntu home directory. Another thing that I learned is how to create an elastic IP address for my server instance. The link to my public server is http://34.233.208.96
 
 ## Caddy
 
