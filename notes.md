@@ -22,6 +22,8 @@ Today I learned how to create an EC2 instance with the class AMI. I also figured
 
 ## HTML
 
+HTML Input - https://codepen.io/Whitney-Stirling/pen/xbZxRRX
+HTML Structure - https://codepen.io/Whitney-Stirling/pen/ByjaLjY
 
 ## CSS
 
