@@ -24,10 +24,12 @@ Today I learned how to create an EC2 instance with the class AMI. I also figured
 
 HTML Input - https://codepen.io/Whitney-Stirling/pen/xbZxRRX
 HTML Structure - https://codepen.io/Whitney-Stirling/pen/ByjaLjY
+HTML Media - https://codepen.io/Whitney-Stirling/pen/pvgoeBz
+
 
 ## CSS
 
-
+CSS Practice - https://codepen.io/Whitney-Stirling/pen/qEbBmBX
 
 ## React Part 1: Routing
 
