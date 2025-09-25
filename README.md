@@ -67,15 +67,15 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **HTML pages** - I did not complete this part of the deliverable.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
-- [ ] **Links** - I did not complete this part of the deliverable.
-- [ ] **Text** - I did not complete this part of the deliverable.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [x] **HTML pages** - I made five html pages (login, progress tracker, roommate tracker, personal tasks, and a calendar)
+- [x] **Proper HTML element usage** - I have proper format for all html tags, including the body, nav, main, header, and footer
+- [x] **Links** - In the nav of each website page, there are links to the other pages. The only page not in the nav link list is the roommate tracker, which can be accessed through a linked button in the progress tracker page. 
+- [x] **Text** - I have a lot of text for future placeholders with short descriptions about what will go in that spot, and what it will do
+- [x] **3rd party API placeholder** - I added a placeholder for a calendar API that I will be implementing
+- [x] **Images** - I added an image of a calendar to act as a placeholder for my API, and also to help me get a sense of what it will look like on my page
+- [x] **Login placeholder** - The index.html file contains the login portal
+- [x] **DB data placeholder** - There is a database placeholder to keep login information stored. There is another placeholder for keeping the chores saved and stored.
+- [x] **WebSocket placeholder** - There is a Web Socket placeholder where collaborative chore information is shared, making sure that everyone is up to date on what tasks have been completed. 
 
 ## 🚀 CSS deliverable
 
