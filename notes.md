@@ -26,6 +26,10 @@ HTML Input - https://codepen.io/Whitney-Stirling/pen/xbZxRRX
 HTML Structure - https://codepen.io/Whitney-Stirling/pen/ByjaLjY
 HTML Media - https://codepen.io/Whitney-Stirling/pen/pvgoeBz
 
+### HTML Deliverable
+
+I created the HTML deliverable, which included a basic outline of the structure of my website. It doesn't look like much now, since most of the content will be coming from other interactive things like REACT or Javascript. I learned how to properly format a website by using the correct tags, linking pages to one another, adding images, and using some buttons. 
+
 
 ## CSS
 
