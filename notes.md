@@ -34,6 +34,9 @@ I created the HTML deliverable, which included a basic outline of the structure 
 ## CSS
 
 CSS Practice - https://codepen.io/Whitney-Stirling/pen/qEbBmBX
+CSS Flex - https://codepen.io/Whitney-Stirling/pen/KwVVVMW?editors=1100
+
+I learned how to use flex to make resposive websites for different sized screens. This will be very useful as I start developing my website that I want people to access from their phones, tablets, and computers. 
 
 ## React Part 1: Routing
 
