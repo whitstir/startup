@@ -81,12 +81,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Header, footer, and main content body** - I did not complete this part of the deliverable.
-- [ ] **Navigation elements** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing** - I did not complete this part of the deliverable.
-- [ ] **Application elements** - I did not complete this part of the deliverable.
-- [ ] **Application text content** - I did not complete this part of the deliverable.
-- [ ] **Application images** - I did not complete this part of the deliverable.
+- [x] **Header, footer, and main content body** - I changed this so that it's similar across all pages. Pages have a blue background with white boxes to contain elements. 
+- [x] **Navigation elements** - All the links work, and there is a nice navigation bar spanning the top of the page. 
+- [x] **Responsive to window resizing** - I added flex elements so that the website will be responsive to window resizing.
+- [x] **Application elements** - I have good contrast with my elements and make sure that there's plenty of repetition on the nav bar.
+- [x] **Application text content** - Fonts are the same across pages. 
+- [x] **Application images** - I still have the image of my calendar that is serving as a placeholder for my API.
 
 ## 🚀 React part 1: Routing deliverable
 
