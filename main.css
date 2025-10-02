@@ -4,3 +4,28 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+main {
+  flex: 1 calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+    background: linear-gradient(135deg, #2B3A67, #496A81, #66999B, #B3AF8F);
+}
+
+h1 {
+    font-size: 40px;
+    padding: 10px;
+    margin: 10px;
+}
