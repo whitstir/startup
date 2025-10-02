@@ -21,6 +21,23 @@ main {
     color: #1B3C53;
 }
 
+.white-box {
+  background-color: white;
+  padding: 30px 40px; 
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
+  display: flex;
+  flex-direction: column;
+  gap: 0px; 
+}
+ 
+.white-box h1 {
+    text-align: center;
+}
+
+
 header {
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
 }
@@ -35,7 +52,7 @@ header {
   display: flex;
   gap: 15px;
   list-style: none;
-  margin: 0 0 0 10px;
+  margin: 10px;
 }
 
 .nav-bar ul li a {
