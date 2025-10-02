@@ -11,6 +11,11 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background-color: #456882;
+}
+
+.white-box{
+    background-color: white;
 }
 
 body {
@@ -24,9 +29,52 @@ header {
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
-h1 {
-    font-size: 40px;
-    padding: 10px;
-    margin: 10px;
-    color: ;
+#commonly-logo {
+    font-size: 30px;
+    padding: 5px;
+    margin: 10px 10px 10px 30px;
+    color: #1B3C53;
+}
+
+form {
+  max-width: 400px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+  padding: 20px 0px 5px 0;
+}
+
+
+input[type="text"],
+input[type="password"] {
+  padding: 14px 18px;
+  border: none;
+  border-radius: 12px;
+  background-color: #f5f5f5;
+  box-shadow: inset 2px 2px 6px rgba(0,0,0,0.05);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+
+
+a {
+  text-decoration: none;
 }
