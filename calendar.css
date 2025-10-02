@@ -6,7 +6,6 @@
 }
 
 main {
-  min-height: 100vh; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,24 +27,21 @@ header {
 .nav-bar {
   display: flex;
   align-items: center;
-  gap: 20px; /* space between links and username */
+  gap: 20px;
 }
 
 .nav-bar ul {
   display: flex;
   gap: 15px;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-bar ul li a {
   text-decoration: none;
-  color: #456882;   /* matches your site palette */
+  color: #456882;   
   font-weight: 600;
   padding: 6px 12px;
   border-radius: 8px;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-bar ul li a:hover {
