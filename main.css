@@ -21,11 +21,12 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #2B3A67, #496A81, #66999B, #B3AF8F);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 h1 {
     font-size: 40px;
     padding: 10px;
     margin: 10px;
+    color: ;
 }
