@@ -13,26 +13,32 @@ export default function App() {
             <div className="main-body">
                 <header>
                     <h1 id="commonly-logo">Commonly</h1>
-                    <nav class="nav-bar">
+                    <nav className="nav-bar">
 
                         <ul>
                             <li>
-                                <NavLink href="progress_tracker.html">Progress Tracker</NavLink>
+                                <NavLink to="/progtrack">Progress Tracker</NavLink>
                             </li>
                             <li>
-                                <NavLink href="calendar.html">Calendar</NavLink>
+                                <NavLink to="/calendar">Calendar</NavLink>
                             </li>
                             <li>
-                                <NavLink href="mytasks.html">My Tasks</NavLink>
+                                <NavLink to="/mytasks">My Tasks</NavLink>
                             </li>
                             <li>
-                                <NavLink href="index.html">Login</NavLink>
+                                <NavLink to="/login">Login</NavLink>
                             </li>
                         </ul>
                         <h3>Username displayed here</h3>
                     </nav>
                 </header>
-                <div className="body bg-dark text-light">App will display here</div>
+                <Routes>
+                    <Route path='/login' element={<Login />} exact />
+                    <Route path='/mytasks' element={<MyTasks />} />
+                    <Route path='/progtrack' element={<ProgTrack />} />
+                    <Route path='/calendar' element={<Calendar />} />
+                    <Route path='*' element={<NotFound />} />
+                </Routes>
                 <footer>
                     <div>
                         <h2>Database Placeholder</h2>
@@ -46,5 +52,9 @@ export default function App() {
                 </footer>
             </div>
         </BrowserRouter>
+        
     );
+}
+function NotFound() {
+  return <main className="container-fluid bg-secondary text-center">404: Return to sender. Address unknown.</main>;
 }
