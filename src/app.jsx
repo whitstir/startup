@@ -17,16 +17,16 @@ export default function App() {
 
                         <ul>
                             <li>
-                                <a href="progress_tracker.html">Progress Tracker</a>
+                                <NavLink href="progress_tracker.html">Progress Tracker</NavLink>
                             </li>
                             <li>
-                                <a href="calendar.html">Calendar</a>
+                                <NavLink href="calendar.html">Calendar</NavLink>
                             </li>
                             <li>
-                                <a href="mytasks.html">My Tasks</a>
+                                <NavLink href="mytasks.html">My Tasks</NavLink>
                             </li>
                             <li>
-                                <a href="index.html">Login</a>
+                                <NavLink href="index.html">Login</NavLink>
                             </li>
                         </ul>
                         <h3>Username displayed here</h3>
