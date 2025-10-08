@@ -96,7 +96,7 @@ footer {
 .progress-container {
   padding: 20px;
   display: flex;
-  justify-content: space-around; /* space between boxes */
+  justify-content: space-around; 
   align-items: center;
   width: 80%;
   margin: 40px auto;
@@ -104,12 +104,21 @@ footer {
 
 .progress-box {
   background-color: #f8f8f8;
-  border: 1px solid #ddd;
   border-radius: 10px;
   padding: 40px 20px;
   text-align: center;
-  flex: 1; /* makes all boxes equal width */
+  flex: 1; 
   margin: 0 10px;
-  font-weight: bold;
   font-size: 1.2rem;
+}
+
+
+@media (max-width: 768px) {
+  .progress-container {
+    flex-direction: column;
+  }
+
+  .progress-box {
+    margin: 10px 0;
+  }
 }
