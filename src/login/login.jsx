@@ -14,7 +14,7 @@ export function Login() {
                     <input type="password" id="password" name="password" placeholder="Password" required />
 
                 </form>
-                <NavLink to="/progress_tracker">
+                <NavLink to="/progtrack">
                     <button className="button">Login</button>
                 </NavLink>
                 <div>
