@@ -40,5 +40,6 @@ I learned how to use flex to make resposive websites for different sized screens
 
 ## React Part 1: Routing
 
+I learned how to convert my html/css pages into a React website using the .jsx pages. This was super interesting and I see why a lot of people prefer this to having a bunch of html files floating around! Something important for me to remember is that sometimes you will have to convert html tags to a JavaScript version, like how <a> tags need to be <NavLink> tags, and we use "to" instead of "href"
 
 ## React Part 2: Reactivity
