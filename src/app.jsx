@@ -37,6 +37,7 @@ export default function App() {
                     <Route path='/mytasks' element={<MyTasks />} />
                     <Route path='/progtrack' element={<ProgTrack />} />
                     <Route path='/calendar' element={<Calendar />} />
+                    <Route path="/roommates" element={<RoommateTracker />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
                 <footer>
