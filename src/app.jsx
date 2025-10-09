@@ -6,6 +6,7 @@ import { Login } from './login/login';
 import { MyTasks } from './mytasks/mytasks';
 import { ProgTrack } from './progtrack/progtrack';
 import { Calendar } from './calendar/calendar';
+import { Roommates } from './roommates/roommates';
 
 export default function App() {
     return (
@@ -37,7 +38,7 @@ export default function App() {
                     <Route path='/mytasks' element={<MyTasks />} />
                     <Route path='/progtrack' element={<ProgTrack />} />
                     <Route path='/calendar' element={<Calendar />} />
-                    <Route path="/roommates" element={<RoommateTracker />} />
+                    <Route path="/roommates" element={<Roommates />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
                 <footer>
