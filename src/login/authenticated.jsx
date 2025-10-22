@@ -11,7 +11,7 @@ export function Authenticated({ userName, onLogout }) {
   }
 
   return (
-    <div>
+    <div className="white-box">
       <h2>Hello, {userName}!</h2>
       <button className="button" onClick={() => navigate('/progtrack')}>
         Go to Progress Tracker

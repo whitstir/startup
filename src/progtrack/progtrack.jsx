@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 export function ProgTrack() {
   return (
     <main>
+      <div  className="white-box">
         <h1>Progress Tracker</h1>
         <div className="progress-container">
         <div className="progress-box">Daily</div>
@@ -14,6 +15,7 @@ export function ProgTrack() {
             <NavLink to="/roommates">
                 <button className="button">Click here to see your roommates' progress!</button>
             </NavLink>
+      </div>
     </main>
   );
 }
