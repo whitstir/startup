@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export function ProgTrack() {
+export function ProgTrack({ userName = 'Guest'}) {
+  const [chores, setChores] = useState([]);
+  const [newChore, setNewChore] = useState('');
+
+  useEffect(() => {
+    const savedChores = JSON.parse(localStorage.getItem(`${userName}-chores`)) || [];
+    setChores(storedChores);
+  }, [userName]);
+
   return (
     <main>
       <div  className="white-box">
