@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap'
 
-export function unauthenticated({userName: initialUserName, onLogin}) {
+export function unauthenticated({ userName: initialUserName, onLogin }) {
     const [userName, setUserName] = useState(initialUserName);
     const [password, setPassword] = useState('');
 
@@ -21,15 +21,30 @@ export function unauthenticated({userName: initialUserName, onLogin}) {
                 <h1>Login</h1>
                 <form>
                     <label htmlFor="first">Username:</label>
-                    <input type="text" id="first" name="first" placeholder="Username or Email" required />
-
+                    <input
+                        type="text"
+                        id="first"
+                        name="first"
+                        placeholder="Username or Email"
+                        value={userName}
+                        onChange={(e) => setUserName(e.target.value)}
+                        required
+                    />
                     <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Password" required />
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
 
                 </form>
-                <NavLink to="/progtrack">
-                    <button className="button">Login</button>
-                </NavLink>
+                <button className="button" type="submit" disabled={!userName || !password}>
+                    Login
+                </button>
                 <div>
                     <a href="https://github.com/whitstir/startup.git">
                         <button className="button">Look at my GitHub!</button>
