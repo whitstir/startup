@@ -1,28 +1,29 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { unauthenticated } from './unauthenticated';
+import { authenticated } from './authenticated';
+import { authState } from './authState';
 
-export function Login() {
-    return (
-        <main>
-            <div className="white-box">
-                <h1>Login</h1>
-                <form>
-                    <label htmlFor="first">Username:</label>
-                    <input type="text" id="first" name="first" placeholder="Username or Email" required />
-
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Password" required />
-
-                </form>
-                <NavLink to="/progtrack">
-                    <button className="button">Login</button>
-                </NavLink>
-                <div>
-                    <a href="https://github.com/whitstir/startup.git">
-                        <button className="button">Look at my GitHub!</button>
-                    </a>
-                </div>
-            </div>
-        </main>
-    );
+export function Login({ userName, authState, onAuthChange }) {
+  return (
+    <main>
+      <div>
+        {authState === authState.authenticated && (
+          <authenticated
+            userName={userName}
+            onLogout={() =>
+              onAuthChange(userName, authState.unauthenticated)
+            }
+          />
+        )}
+        {authState === authState.unauthenticated && (
+          <unauthenticated
+            userName={userName}
+            onLogin={(loginUserName) =>
+              onAuthChange(loginUserName, authState.authenticated)
+            }
+          />
+        )}
+      </div>
+    </main>
+  );
 }

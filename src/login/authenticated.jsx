@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
-export function Authenticated({ userName, onLogout }) {
+export function authenticated({ userName, onLogout }) {
   const navigate = useNavigate();
 
   function logout() {
