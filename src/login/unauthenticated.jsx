@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import { Button } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react';
 
-export function unauthenticated({ userName: initialUserName, onLogin }) {
+export function Unauthenticated({ userName: initialUserName, onLogin }) {
     const [userName, setUserName] = useState(initialUserName);
     const [password, setPassword] = useState('');
 
+    useEffect(() => {
+        setUserName(initialUserName || '');
+        setPassword('');
+    }, [initialUserName]);
+
     function loginUser() {
         localStorage.setItem('userName', userName);
-        onLogin(userName)
-    }
-
-    function createUser() {
-        localStorage.setItem('userName', userName);
-        onLogin(userName)
+        onLogin(userName);
     }
 
     return (
@@ -42,7 +41,7 @@ export function unauthenticated({ userName: initialUserName, onLogin }) {
                     />
 
                 </form>
-                <button className="button" type="submit" disabled={!userName || !password}>
+                <button className="button" onClick={loginUser} disabled={!userName || !password}>
                     Login
                 </button>
                 <div>

@@ -1,19 +1,19 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { AuthState } from './authState';
 
-export function authenticated({ userName, onLogout }) {
+export function Authenticated({ userName, onLogout }) {
   const navigate = useNavigate();
 
   function logout() {
     localStorage.removeItem('userName');
-    onLogout();
+    onLogout('', AuthState.Unauthenticated);
   }
 
   return (
     <div>
       <h2>Hello, {userName}!</h2>
-      <button className="button" Click={() => navigate('/progtrack')}>
+      <button className="button" onClick={() => navigate('/progtrack')}>
         Go to Progress Tracker
       </button>
       <button className="button" onClick={logout}>

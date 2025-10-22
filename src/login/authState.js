@@ -1,7 +1,7 @@
-export class authState {
-  static Unknown = new authState('unknown');
-  static authenticated = new authState('authenticated');
-  static unauthenticated = new authState('unauthenticated');
+export class AuthState {
+  static Unknown = new AuthState('unknown');
+  static Authenticated = new AuthState('authenticated');
+  static Unauthenticated = new AuthState('unauthenticated');
 
   constructor(name) {
     this.name = name;
