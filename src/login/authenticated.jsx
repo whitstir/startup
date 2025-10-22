@@ -13,12 +13,12 @@ export function Authenticated({ userName, onLogout }) {
   return (
     <div>
       <h2>Hello, {userName}!</h2>
-      <Button onClick={() => navigate('/progtrack')}>
+      <button className="button" Click={() => navigate('/progtrack')}>
         Go to Progress Tracker
-      </Button>{' '}
-      <Button onClick={logout}>
+      </button>
+      <button className="button" onClick={logout}>
         Logout
-      </Button>
+      </button>
     </div>
   );
 }
