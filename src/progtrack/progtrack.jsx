@@ -37,7 +37,7 @@ export function ProgTrack({ userName = 'Guest' }) {
         </div>
 
         <div>
-          <input type="text" placeholder='New chore...' value={newChore} onChange={(e) => setNewChore(e.target.value)}></input>
+          <input type="text" placeholder='Add new chore' value={newChore} onChange={(e) => setNewChore(e.target.value)}></input>
           <button className="button" onClick={addChore}>Add</button>
         </div>
 
