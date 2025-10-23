@@ -4,6 +4,15 @@ import { NavLink } from 'react-router-dom';
 export function MyTasks() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
+
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem('myTasks')) || [];
+    setTasks(savedTasks);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('myTasks', JSON.stringify(tasks));
+  }, [tasks]);
   
   return (
     <main>
