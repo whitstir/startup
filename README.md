@@ -100,8 +100,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **All functionality implemented or mocked out** - I did not complete this part of the deliverable.
-- [ ] **Hooks** - I did not complete this part of the deliverable.
+- [x] **All functionality implemented or mocked out** - I mocked out the roommate tracker progress, but I implemented functionality for adding tasks to the My Tasks and the Progress Tracker. I also implemented the login part so that you can log in and out. Everything is saved in local storage. 
+- [x] **Hooks** - Uses useState and useEffect
 
 ## 🚀 Service deliverable
 
