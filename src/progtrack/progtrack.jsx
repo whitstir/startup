@@ -42,7 +42,7 @@ export function ProgTrack({ userName = 'Guest' }) {
         </div>
 
         <ul>
-          {chore.map((chore) => (
+          {chores.map((chore) => (
             <li key={chore.id}>
               {chore.name}{' '}
               <button className="button" onClick={() => deleteChore(chore.id)}>Delete</button>
@@ -50,7 +50,6 @@ export function ProgTrack({ userName = 'Guest' }) {
           ))}
         </ul>
 
-        <p>Use this Progress Tracker to stay on top of all your chores and personal tasks! </p>
         <NavLink to="/roommates">
           <button className="button">Click here to see your roommates' progress!</button>
         </NavLink>
