@@ -13,7 +13,20 @@ export function MyTasks() {
   useEffect(() => {
     localStorage.setItem('myTasks', JSON.stringify(tasks));
   }, [tasks]);
-  
+
+  function addTask() {
+    if (newTask.trim() === '') {
+      return;
+    }
+    setTasks([...tasks, newTask]);
+    setNewTask('');
+  }
+
+  function deleteTask(index) {
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTasks(updatedTasks);
+  }
+
   return (
     <main>
         <div className="white-box">
