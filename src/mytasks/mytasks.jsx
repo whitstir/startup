@@ -29,16 +29,34 @@ export function MyTasks() {
 
   return (
     <main>
-        <div className="white-box">
-            <h1>My Tasks</h1>
-            <ul>
-                <li>Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li>
-                <li>Task 4</li>
-                <li>Task 5</li>
-            </ul>
+      <div className="white-box">
+        <h1>My Tasks</h1>
+
+        <div className="task-input">
+          <input
+            type="text"
+            placeholder="Add a new task"
+            value={newTask}
+            onChange={(e) => setNewTask(e.target.value)}
+          />
+          <button className="button" onClick={addTask}>Add</button>
         </div>
+
+        <ul>
+          {tasks.length === 0 ? (
+            <li>No reminders yet... add one above!</li>
+          ) : (
+            tasks.map((task, index) => (
+              <li key={index}>
+                {task}
+                <button
+                  className="button"
+                  onClick={() => deleteTask(index)}>Delete</button>
+              </li>
+            ))
+          )}
+        </ul>
+      </div>
     </main>
   );
 }
