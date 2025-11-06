@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthState } from './authState';
 
-export function Authenticated({ userName, onLogout }) {
+export function Authenticated(props) {
   const navigate = useNavigate();
 
   function logout() {
@@ -20,7 +20,7 @@ export function Authenticated({ userName, onLogout }) {
 
   return (
     <div className="white-box">
-      <h2>Hello, {userName}!</h2>
+      <h2>Hello, {props.userName}!</h2>
       <button className="button" onClick={() => navigate('/progtrack')}>
         Go to Progress Tracker
       </button>
