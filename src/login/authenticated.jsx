@@ -24,7 +24,7 @@ export function Authenticated({ userName, onLogout }) {
       <button className="button" onClick={() => navigate('/progtrack')}>
         Go to Progress Tracker
       </button>
-      <button className="button" onClick={logout}>
+      <button className="button" onClick={() => logout()}>
         Logout
       </button>
     </div>
