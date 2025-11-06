@@ -6,6 +6,8 @@ const app = express();
 
 const authCookieName = 'token';
 
+let users = [];
+
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 app.use(express.static('public'));
 
@@ -64,6 +66,11 @@ const verifyAuth = async (req, res, next) => {
     res.status(401).send({ msg: 'Unauthorized' });
   }
 };
+
+// Default error handler
+app.use(function (err, req, res, next) {
+  res.status(500).send({ type: err.name, message: err.message });
+});
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
