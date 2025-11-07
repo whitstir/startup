@@ -107,12 +107,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
+- [x] **Node.js/Express HTTP service** - I implemented backend service using Express
+- [x] **Static middleware for frontend** - I used Express static middleware for the frontend
+- [x] **Calls to third party endpoints** - The backend fetches data from the Today in History API and forwards it to the frontend
+- [x] **Backend service endpoints** - I made endpoints for authentication for my api's
+- [x] **Frontend calls service endpoints** - Frontend calls api's for login stuff and the historical events
+- [x] **Supports registration, login, logout, and restricted endpoint** - The authentication endpoints are implemented with cookies and token validation. 
 
 
 ## 🚀 DB deliverable
