@@ -2,9 +2,7 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const express = require('express');
 const uuid = require('uuid');
-const fetch = require('node-fetch');
 const app = express();
-
 const authCookieName = 'token';
 
 let users = [];
