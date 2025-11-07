@@ -106,6 +106,17 @@ function setAuthCookie(res, authToken) {
   });
 }
 
+app.get('/api/nameday', async (req, res) => {
+  try {
+    const response = await fetch('https://nameday.abalin.net/api/V1/today');
+    const data = await response.json();
+    res.json(data); // forward API response to frontend
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: 'Failed to fetch nameday' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
