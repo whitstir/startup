@@ -82,8 +82,6 @@ export default function App() {
 
         <footer>
           <div>
-            <h2>Database Placeholder</h2>
-            <p>The database will save and remember your chores.</p>
             <h2>Web Socket Placeholder</h2>
             <p>
               The Web Socket of this website will allow for collaboration on household
@@ -91,7 +89,7 @@ export default function App() {
               task bar based on others' work.
             </p>
           </div>
-          Commonly (Footer Placeholder)
+          Commonly
         </footer>
       </div>
     </BrowserRouter>
