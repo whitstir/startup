@@ -26,7 +26,7 @@ export function Calendar() {
 
   return (
     <main>
-      <div className="white-box">
+      <div className="white-box" style={{width:"80%"}}>
         <h1>Today in History</h1>
         {loading ? (
           <p>Loading events...</p>
