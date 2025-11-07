@@ -20,6 +20,24 @@ app.use(cookieParser());
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+
+app.get('/api/calendar', async (req, res) => {
+  try {
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+
+    const response = await fetch(`https://byabbe.se/on-this-day/${month}/${day}/events.json`);
+    if (!response.ok) throw new Error(`API returned ${response.status}`);
+
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    console.error('Failed to fetch calendar events:', err);
+    res.status(500).json({ msg: 'Failed to fetch calendar events' });
+  }
+});
+
 // CreateAuth a new user
 apiRouter.post('/auth/create', async (req, res) => {
   if (await findUser('email', req.body.email)) {
@@ -104,17 +122,6 @@ function setAuthCookie(res, authToken) {
     sameSite: 'strict',
   });
 }
-
-app.get('/api/nameday', async (req, res) => {
-  try {
-    const response = await fetch('https://nameday.abalin.net/api/V1/today');
-    const data = await response.json();
-    res.json(data); // forward API response to frontend
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ msg: 'Failed to fetch nameday' });
-  }
-});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
