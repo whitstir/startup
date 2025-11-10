@@ -1,5 +1,5 @@
 # dependencies
-node_modules
+node_modules/
 /.pnp
 .pnp.js
 
@@ -11,5 +11,5 @@ node_modules
 .DS_Store
 
 npm-debug.log*
-.vscode
+.vscode/
 dbConfig.json
