@@ -53,4 +53,7 @@ module.exports = {
   getUserByToken,
   addUser,
   updateUser,
+  addChore,
+  getEmailChore,
+  deleteChore,
 };
