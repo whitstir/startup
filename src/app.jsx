@@ -8,6 +8,7 @@ import { ProgTrack } from './progtrack/progtrack';
 import { Calendar } from './calendar/calendar';
 import { Roommates } from './roommates/roommates';
 import { AuthState } from './login/authState';
+import { ProtectedRoute } from './protected_route';
 
 export default function App() {
   const [userName, setUserName] = useState('');
@@ -86,10 +87,10 @@ export default function App() {
               />
             }
           />
-          <Route path="/mytasks" element={<MyTasks />} />
-          <Route path="/progtrack" element={<ProgTrack />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/roommates" element={<Roommates />} />
+          <Route path="/mytasks" element={<ProtectedRoute authState={authState}><MyTasks /></ProtectedRoute>} />
+          <Route path="/progtrack" element={<ProtectedRoute authState={authState}><ProgTrack /></ProtectedRoute>}/>
+          <Route path="/calendar" element={<ProtectedRoute authState={authState}><Calendar /></ProtectedRoute>} />
+          <Route path="/roommates" element={<ProtectedRoute authState={authState}><Roommates /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
