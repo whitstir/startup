@@ -41,11 +41,11 @@ export function ProgTrack({ userName = 'Guest' }) {
     }
   }
 
-  function deleteChore(id) {
+  async function deleteChore(id) {
     try {
       const response = await fetch(`/api/chores/${id}`, { method: 'DELETE' });
       if (response.ok) {
-        setChores(chores.filter((chore) => chore.id !== id));
+        setChores(chores.filter((chore) => chore._id !== id));
       }
     } catch (err) {
       console.error('Error deleting chore', err);
@@ -70,9 +70,9 @@ export function ProgTrack({ userName = 'Guest' }) {
 
         <ul>
           {chores.map((chore) => (
-            <li key={chore.id}>
+            <li key={chore._id}>
               {chore.name}{' '}
-              <button className="button" onClick={() => deleteChore(chore.id)}>Delete</button>
+              <button className="button" onClick={() => deleteChore(chore._id)}>Delete</button>
             </li>
           ))}
         </ul>

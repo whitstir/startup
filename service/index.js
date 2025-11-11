@@ -19,6 +19,16 @@ app.use(cookieParser());
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+// Middleware to verify that the user is authorized to call an endpoint
+const verifyAuth = async (req, res, next) => {
+  const user = await findUser('token', req.cookies[authCookieName]);
+  if (user) {
+    next();
+  } else {
+    res.status(401).send({ msg: 'Unauthorized' });
+  }
+};
+
 
 app.get('/api/calendar', async (req, res) => {
   try {
@@ -52,6 +62,17 @@ apiRouter.post('/chores', verifyAuth, async (req, res) => {
   await DB.addChore(chore);
   res.status(201).json(chore);
 })
+
+apiRouter.delete('/chores/:id', verifyAuth, async (req, res) => {
+  const user = await findUser('token', req.cookies[authCookieName]);
+  try {
+    await DB.deleteChore(req.params.id, user.email);
+    res.status(200).end();
+  } catch (err) {
+    console.error('Error deleting chore:', err);
+    res.status(500).send({ msg: 'Error deleting chore' });
+  }
+});
 
 
 // CreateAuth token for a new user
@@ -92,15 +113,6 @@ apiRouter.delete('/auth/logout', async (req, res) => {
   res.status(204).end();
 });
 
-// Middleware to verify that the user is authorized to call an endpoint
-const verifyAuth = async (req, res, next) => {
-  const user = await findUser('token', req.cookies[authCookieName]);
-  if (user) {
-    next();
-  } else {
-    res.status(401).send({ msg: 'Unauthorized' });
-  }
-};
 
 // Default error handler
 app.use(function (err, req, res, next) {
