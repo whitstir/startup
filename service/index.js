@@ -43,6 +43,17 @@ apiRouter.get('/chores', verifyAuth, async (req, res) => {
   res.json(chores);
 })
 
+apiRouter.post('/chores', verifyAuth, async (req, res) => {
+  const user = await findUser('token', req.cookies[authCookieName]);
+  const chore = {
+    email: user.email,
+    name: req.body.name,
+  };
+  await DB.addChore(chore);
+  res.status(201).json(chore);
+})
+
+
 // CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
   if (await findUser('email', req.body.email)) {
