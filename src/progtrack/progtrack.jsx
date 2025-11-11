@@ -42,7 +42,15 @@ export function ProgTrack({ userName = 'Guest' }) {
   }
 
   function deleteChore(id) {
-    setChores(chores.filter((chore) => chore.id !== id));
+    try {
+      const response = await fetch(`/api/chores/${id}`, { method: 'DELETE' });
+      if (response.ok) {
+        setChores(chores.filter((chore) => chore.id !== id));
+      }
+    } catch (err) {
+      console.error('Error deleting chore', err);
+    }
+    
   }
 
   return (
