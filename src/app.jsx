@@ -14,19 +14,29 @@ export default function App() {
   const [authState, setAuthState] = useState(AuthState.Unknown);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('userName');
-    if (storedUser) {
-      setUserName(storedUser);
-      setAuthState(AuthState.Authenticated);
-    } else {
+  async function checkAuth() {
+    try {
+      const response = await fetch('/api/auth/verify', {
+        method: 'GET',
+        credentials: 'include',
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setUserName(data.email);
+        setAuthState(AuthState.Authenticated);
+      } else {
+        setAuthState(AuthState.Unauthenticated);
+      }
+    } catch (err) {
+      console.error('Error checking auth:', err);
       setAuthState(AuthState.Unauthenticated);
     }
-  }, []);
-
-  function handleAuthChange(user, newState) {
-    setUserName(user);
-    setAuthState(newState);
   }
+  checkAuth();
+}, []);
+
+  setUserName('');
+  setAuthState(AuthState.Unauthenticated);
 
   return (
     <BrowserRouter>

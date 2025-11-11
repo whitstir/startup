@@ -47,6 +47,15 @@ app.get('/api/calendar', async (req, res) => {
   }
 });
 
+apiRouter.get('/auth/verify', async (req, res) => {
+  const user = await findUser('token', req.cookies[authCookieName]);
+  if (user) {
+    res.json({ email: user.email });
+  } else {
+    res.status(401).json({ msg: 'Unauthorized' });
+  }
+});
+
 apiRouter.get('/chores', verifyAuth, async (req, res) => {
   const user = await findUser('token', req.cookies[authCookieName]);
   const chores = await DB.getEmailChore(user.email);
