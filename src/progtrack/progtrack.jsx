@@ -22,12 +22,23 @@ export function ProgTrack({ userName = 'Guest' }) {
     fetchChores();
   }, []);
 
-  function addChore() {
+  async function addChore() {
     if (!newChore.trim()) {
-      return;
+      return;}
+    try {
+      const response = await fetch('/api/chores', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: newChore }),
+      });
+      if (response.ok) {
+        const savedChore = await response.json();
+        setChores([...chores, savedChore]);
+        setNewChore('');
+      }
+    } catch (err) {
+      console.error('Error adding chore:', err);
     }
-    setChores([...chores, { id: Date.now(), name: newChore }]);
-    setNewChore('');
   }
 
   function deleteChore(id) {
