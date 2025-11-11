@@ -41,6 +41,11 @@ async function getEmailChore(email) {
   await choreCollection.find({email}).toArray();
 }
 
+async function deleteChore(id, email) {
+  const { ObjectId } = require('mongodb');
+  await choreCollection.deleteOne({ _id: new ObjectId(id), email });
+}
+
 
 
 module.exports = {
