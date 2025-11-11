@@ -5,6 +5,7 @@ const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostna
 const client = new MongoClient(url);
 const db = client.db('startup');
 const userCollection = db.collection('user');
+const choreCollection = db.collection('chores');
 
 (async function testConnection() {
   try {
@@ -30,6 +31,10 @@ async function addUser(user) {
 
 async function updateUser(user) {
   await userCollection.updateOne({ email: user.email }, { $set: user });
+}
+
+async function addChore(chore) {
+  await choreCollection.insertOne(chore);
 }
 
 module.exports = {
