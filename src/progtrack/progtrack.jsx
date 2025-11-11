@@ -6,13 +6,21 @@ export function ProgTrack({ userName = 'Guest' }) {
   const [newChore, setNewChore] = useState('');
 
   useEffect(() => {
-    const storedChores = JSON.parse(localStorage.getItem(`${userName}-chores`)) || [];
-    setChores(storedChores);
-  }, [userName]);
-
-  useEffect(() => {
-    localStorage.setItem(`${userName}-chores`, JSON.stringify(chores));
-  }, [chores, userName]);
+    async function fetchChores() {
+      try {
+        const response = await fetch('/api/chores');
+        if (response.ok) {
+          const choresFromDB = await response.json();
+          setChores(choresFromDB);
+        } else {
+          console.error('Failed to fetch chores:', response.status);
+        }
+      } catch (err) {
+        console.error('Error loading chores:', err);
+      }
+    }
+    fetchChores();
+  }, []);
 
   function addChore() {
     if (!newChore.trim()) {
