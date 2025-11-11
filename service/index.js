@@ -37,6 +37,12 @@ app.get('/api/calendar', async (req, res) => {
   }
 });
 
+apiRouter.get('/chores', verifyAuth, async (req, res) => {
+  const user = await findUser('token', req.cookies[authCookieName]);
+  const chores = await DB.getEmailChore(user.email);
+  res.json(chores);
+})
+
 // CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
   if (await findUser('email', req.body.email)) {
