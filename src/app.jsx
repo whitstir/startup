@@ -49,18 +49,14 @@ export default function App() {
           <h1 id="commonly-logo">Commonly</h1>
           <nav className="nav-bar">
             <ul>
-              <li>
-                <NavLink to="/progtrack">Progress Tracker</NavLink>
-              </li>
-              <li>
-                <NavLink to="/calendar">Calendar</NavLink>
-              </li>
-              <li>
-                <NavLink to="/mytasks">My Tasks</NavLink>
-              </li>
-              <li>
-                <NavLink to="/login">Login</NavLink>
-              </li>
+              {authState === AuthState.Authenticated && (
+                <>
+                  <li><NavLink to="/progtrack">Progress Tracker</NavLink></li>
+                  <li><NavLink to="/calendar">Calendar</NavLink></li>
+                  <li><NavLink to="/mytasks">My Tasks</NavLink></li>
+                  <li><NavLink to="/login">Login</NavLink></li>
+                </>
+              )}
             </ul>
             <h3>{authState === AuthState.Authenticated ? userName : 'Guest'}</h3>
           </nav>
@@ -88,7 +84,7 @@ export default function App() {
             }
           />
           <Route path="/mytasks" element={<ProtectedRoute authState={authState}><MyTasks /></ProtectedRoute>} />
-          <Route path="/progtrack" element={<ProtectedRoute authState={authState}><ProgTrack /></ProtectedRoute>}/>
+          <Route path="/progtrack" element={<ProtectedRoute authState={authState}><ProgTrack /></ProtectedRoute>} />
           <Route path="/calendar" element={<ProtectedRoute authState={authState}><Calendar /></ProtectedRoute>} />
           <Route path="/roommates" element={<ProtectedRoute authState={authState}><Roommates /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
