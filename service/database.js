@@ -37,6 +37,12 @@ async function addChore(chore) {
   await choreCollection.insertOne(chore);
 }
 
+async function getEmailChore(email) {
+  await choreCollection.find({email}).toArray();
+}
+
+
+
 module.exports = {
   getUser,
   getUserByToken,
