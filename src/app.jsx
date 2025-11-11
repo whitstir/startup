@@ -54,7 +54,6 @@ export default function App() {
                 <>
                   <li><NavLink to="/progtrack">Progress Tracker</NavLink></li>
                   <li><NavLink to="/calendar">Calendar</NavLink></li>
-                  <li><NavLink to="/mytasks">My Tasks</NavLink></li>
                   <li><NavLink to="/login">Login</NavLink></li>
                   <li><a href="https://github.com/whitstir/startup.git">My GitHub</a></li>
                 </>
