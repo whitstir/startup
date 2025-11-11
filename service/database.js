@@ -38,7 +38,7 @@ async function addChore(chore) {
 }
 
 async function getEmailChore(email) {
-  await choreCollection.find({email}).toArray();
+  return await choreCollection.find({email}).toArray();
 }
 
 async function deleteChore(id, email) {

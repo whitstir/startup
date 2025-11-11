@@ -8,7 +8,7 @@ export function ProgTrack({ userName = 'Guest' }) {
   useEffect(() => {
     async function fetchChores() {
       try {
-        const response = await fetch('/api/chores');
+        const response = await fetch('/api/chores', { credentials: 'include' });
         if (response.ok) {
           const choresFromDB = await response.json();
           setChores(choresFromDB);
@@ -30,6 +30,7 @@ export function ProgTrack({ userName = 'Guest' }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: newChore }),
+        credentials: 'include',
       });
       if (response.ok) {
         const savedChore = await response.json();
@@ -43,7 +44,7 @@ export function ProgTrack({ userName = 'Guest' }) {
 
   async function deleteChore(id) {
     try {
-      const response = await fetch(`/api/chores/${id}`, { method: 'DELETE' });
+      const response = await fetch(`/api/chores/${id}`, { method: 'DELETE' , credentials: 'include',});
       if (response.ok) {
         setChores(chores.filter((chore) => chore._id !== id));
       }
