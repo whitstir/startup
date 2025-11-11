@@ -9,6 +9,7 @@ import { Calendar } from './calendar/calendar';
 import { Roommates } from './roommates/roommates';
 import { AuthState } from './login/authState';
 import { ProtectedRoute } from './protected_route';
+import { Nav } from 'react-bootstrap';
 
 export default function App() {
   const [userName, setUserName] = useState('');
@@ -55,6 +56,7 @@ export default function App() {
                   <li><NavLink to="/calendar">Calendar</NavLink></li>
                   <li><NavLink to="/mytasks">My Tasks</NavLink></li>
                   <li><NavLink to="/login">Login</NavLink></li>
+                  <li><a href="https://github.com/whitstir/startup.git">My GitHub</a></li>
                 </>
               )}
             </ul>
