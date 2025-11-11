@@ -119,7 +119,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Stores data in MongoDB** - User data such as login information and tasks are stored in MongoDB
+- [x] **Stores data in MongoDB** - User data for the progress tracker is saved and stored in MongoDB
 - [x] **Stores credentials in MongoDB** - User credentials are securely stored in MongoDB
 
 ## 🚀 WebSocket deliverable
