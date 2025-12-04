@@ -77,10 +77,6 @@ export function ProgTrack({ userName = 'Guest' }) {
             </li>
           ))}
         </ul>
-
-        <NavLink to="/roommates">
-          <button className="button">Click here to see your roommates' progress!</button>
-        </NavLink>
       </div>
     </main>
   );
