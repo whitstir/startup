@@ -9,11 +9,13 @@ import { Calendar } from './calendar/calendar';
 import { Roommates } from './roommates/roommates';
 import { AuthState } from './login/authState';
 import { ProtectedRoute } from './protected_route';
+import { Chat, ChatClient } from './chat';
 import { Nav } from 'react-bootstrap';
 
 export default function App() {
   const [userName, setUserName] = useState('');
   const [authState, setAuthState] = useState(AuthState.Unknown);
+  const [chatClient] = useState(() => new ChatClient());
 
   useEffect(() => {
     async function checkAuth() {
@@ -89,7 +91,7 @@ export default function App() {
           <Route path="/progtrack" element={<ProtectedRoute authState={authState}><ProgTrack /></ProtectedRoute>} />
           <Route path="/calendar" element={<ProtectedRoute authState={authState}><Calendar /></ProtectedRoute>} />
           <Route path="/roommates" element={<ProtectedRoute authState={authState}><Roommates /></ProtectedRoute>} />
-          <Route path="/chat" element={<ProtectedRoute authState={authState}><Chat /></ProtectedRoute>} />
+          <Route path="/chat" element={<ProtectedRoute authState={authState}><Chat webSocket={chatClient} /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
