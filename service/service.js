@@ -2,13 +2,13 @@ const { WebSocketServer } = require('ws');
 const express = require('express');
 const app = express();
 
-const port = process.argv.length > 2 ? process.argv[2] : 4000;
+const port = process.env.PORT || 4000;
 server = app.listen(port, () => {
   console.log(`Listening on ${port}`);
 });
 
 // Create a websocket object
-const socketServer = new WebSocketServer({ server, path: "/ws" });
+const socketServer = new WebSocketServer({ server, path: '/ws' });
 
 socketServer.on('connection', (socket) => {
   socket.isAlive = true;

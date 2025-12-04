@@ -5,13 +5,13 @@ export function Chat({ webSocket }) {
     const [name, setName] = React.useState('');
 
     return (
-        
+
         <main className="chat-container-wrapper">
-            <div lassName="chat-container">
+            <div className="chat-container">
                 <h1>Chat Room</h1>
                 <div className='white-box'>
-                <Name updateName={setName} />
-                <Message name={name} webSocket={webSocket} />
+                    <Name updateName={setName} />
+                    <Message name={name} webSocket={webSocket} />
                 </div>
                 <Conversation webSocket={webSocket} />
             </div>
@@ -28,7 +28,7 @@ function Name({ updateName }) {
                 id="my-name"
                 type="text"
                 onChange={(e) => updateName(e.target.value)}
-                placeholder="Enter your name"/>
+                placeholder="Enter your name" />
         </div>
     );
 }
@@ -79,9 +79,7 @@ function Conversation({ webSocket }) {
     ));
 
     return (
-        <main>
-            <div className='white-box'>{chatEls}</div>
-        </main>
+        <div className='white-box'>{chatEls}</div>
     );
 }
 
@@ -91,7 +89,8 @@ export class ChatClient {
 
     constructor() {
         // Adjust the webSocket protocol to what is being used for HTTP
-        const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+        let port = window.location.port;
+        const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
         this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
         // Display that we have opened the webSocket
         this.socket.onopen = (event) => {
