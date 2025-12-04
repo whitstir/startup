@@ -169,10 +169,6 @@ function setAuthCookie(res, authToken) {
   });
 }
 
-const httpService = app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
-});
-
 // Create a websocket object
 const socketServer = new WebSocketServer({ server, path: '/ws' });
 
