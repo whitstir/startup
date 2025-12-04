@@ -55,6 +55,7 @@ export default function App() {
                   <li><NavLink to="/progtrack">Progress Tracker</NavLink></li>
                   <li><NavLink to="/calendar">Calendar</NavLink></li>
                   <li><NavLink to="/login">Login</NavLink></li>
+                  <li><NavLink to="/chat">Chat</NavLink></li>
                   <li><a href="https://github.com/whitstir/startup.git">My GitHub</a></li>
                 </>
               )}
@@ -88,6 +89,7 @@ export default function App() {
           <Route path="/progtrack" element={<ProtectedRoute authState={authState}><ProgTrack /></ProtectedRoute>} />
           <Route path="/calendar" element={<ProtectedRoute authState={authState}><Calendar /></ProtectedRoute>} />
           <Route path="/roommates" element={<ProtectedRoute authState={authState}><Roommates /></ProtectedRoute>} />
+          <Route path="/chat" element={<ProtectedRoute authState={authState}><Chat /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
