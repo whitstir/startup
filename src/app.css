@@ -10,7 +10,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  padding: 40px;
   background-color: #456882;
 }
 
@@ -176,12 +176,9 @@ label {
 }
 
 .chat-container {
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  width: 100%;
-  padding: 30px;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
 }

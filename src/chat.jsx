@@ -9,8 +9,10 @@ export function Chat({ webSocket }) {
         <main className="chat-container-wrapper">
             <div lassName="chat-container">
                 <h1>Chat Room</h1>
+                <div className='white-box'>
                 <Name updateName={setName} />
                 <Message name={name} webSocket={webSocket} />
+                </div>
                 <Conversation webSocket={webSocket} />
             </div>
         </main>
