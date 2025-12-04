@@ -83,7 +83,7 @@ export class ChatClient {
     constructor() {
         // Adjust the webSocket protocol to what is being used for HTTP
         const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-        this.socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+        this.socket = new WebSocket(`${protocol}://localhost:4000/ws`);
 
         // Display that we have opened the webSocket
         this.socket.onopen = (event) => {
