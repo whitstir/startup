@@ -1,19 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-
 export function Chat({ webSocket }) {
     const [name, setName] = React.useState('');
 
     return (
-        <main>
-            <div className="white-box">
+        
+        <main className="chat-container-wrapper">
+            <div lassName="chat-container">
                 <h1>Chat Room</h1>
                 <Name updateName={setName} />
                 <Message name={name} webSocket={webSocket} />
                 <Conversation webSocket={webSocket} />
             </div>
         </main>
+
     );
 }
 
@@ -77,7 +78,7 @@ function Conversation({ webSocket }) {
 
     return (
         <main>
-            <div>{chatEls}</div>
+            <div className='white-box'>{chatEls}</div>
         </main>
     );
 }
