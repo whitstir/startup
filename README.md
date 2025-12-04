@@ -130,4 +130,4 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [x] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
 - [x] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
 - [x] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [x] **Application is fully functional** - Everything works as it should
+- [x] **Application is fully functional** - Not really working
