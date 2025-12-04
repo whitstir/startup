@@ -1,3 +1,4 @@
+const { WebSocketServer } = require('ws');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const express = require('express');
@@ -7,6 +8,9 @@ const authCookieName = 'token';
 const DB = require('./database.js');
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
+server = app.listen(port, () => {
+  console.log(`Listening on ${port}`);
+});
 app.use(express.static('public'));
 
 // JSON body parsing using built-in middleware
@@ -168,3 +172,37 @@ function setAuthCookie(res, authToken) {
 const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+// Create a websocket object
+const socketServer = new WebSocketServer({ server, path: '/ws' });
+
+socketServer.on('connection', (socket) => {
+  socket.isAlive = true;
+
+  // Forward messages to everyone except the sender
+  socket.on('message', function message(data) {
+    socketServer.clients.forEach(function each(client) {
+      if (client !== socket && client.readyState === WebSocket.OPEN) {
+        console.log('forwarding message to client');
+        client.send(data);
+      }
+    });
+  });
+
+  // Respond to pong messages by marking the connection alive
+  socket.on('pong', () => {
+    console.log('recieved pong from client')
+    socket.isAlive = true;
+  });
+});
+
+// Periodically send out a ping message to make sure clients are alive
+setInterval(() => {
+  socketServer.clients.forEach(function each(client) {
+    if (client.isAlive === false) return client.terminate();
+
+    client.isAlive = false;
+    console.log('sending ping to client')
+    client.ping();
+  });
+}, 10000);
