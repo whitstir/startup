@@ -92,14 +92,6 @@ export default function App() {
         </Routes>
 
         <footer>
-          <div>
-            <h2>Web Socket Placeholder</h2>
-            <p>
-              The Web Socket of this website will allow for collaboration on household
-              chores by communicating with other devices, regularly updating the progress
-              task bar based on others' work.
-            </p>
-          </div>
           Commonly
         </footer>
       </div>
