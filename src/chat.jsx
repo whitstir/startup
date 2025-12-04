@@ -7,23 +7,26 @@ export function Chat({ webSocket }) {
 
     return (
         <main>
-            <Name updateName={setName} />
-            <Message name={name} webSocket={webSocket} />
-            <Conversation webSocket={webSocket} />
+            <div className="white-box">
+                <h1>Chat Room</h1>
+                <Name updateName={setName} />
+                <Message name={name} webSocket={webSocket} />
+                <Conversation webSocket={webSocket} />
+            </div>
         </main>
     );
 }
 
 function Name({ updateName }) {
     return (
-        <main>
-            <div className='name'>
-                <fieldset id='name-controls'>
-                    <legend>My Name</legend>
-                    <input onChange={(e) => updateName(e.target.value)} id='my-name' type='text' />
-                </fieldset>
-            </div>
-        </main>
+        <div>
+            <label htmlFor="my-name">My Name</label>
+            <input
+                id="my-name"
+                type="text"
+                onChange={(e) => updateName(e.target.value)}
+                placeholder="Enter your name"/>
+        </div>
     );
 }
 
@@ -43,15 +46,18 @@ function Message({ name, webSocket }) {
 
     const disabled = name === '' || !webSocket.connected;
     return (
-        <main>
-            <fieldset id='chat-controls'>
-                <legend>Chat</legend>
-                <input disabled={disabled} onKeyDown={(e) => doneMessage(e)} value={message} onChange={(e) => setMessage(e.target.value)} type='text' />
-                <button disabled={disabled || !message} onClick={sendMsg}>
-                    Send
-                </button>
-            </fieldset>
-        </main>
+        <div>
+            <input
+                type="text"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onKeyDown={doneMessage}
+                placeholder="Type a message..."
+                disabled={disabled} />
+            <button onClick={sendMsg} disabled={disabled || !message}>
+                Send
+            </button>
+        </div>
     );
 }
 
@@ -71,7 +77,7 @@ function Conversation({ webSocket }) {
 
     return (
         <main>
-            <div id='chat-text'>{chatEls}</div>
+            <div>{chatEls}</div>
         </main>
     );
 }
