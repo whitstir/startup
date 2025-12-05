@@ -8,9 +8,11 @@ const authCookieName = 'token';
 const DB = require('./database.js');
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
+
 server = app.listen(port, () => {
   console.log(`Listening on ${port}`);
 });
+
 app.use(express.static('public'));
 
 // JSON body parsing using built-in middleware
@@ -168,6 +170,10 @@ function setAuthCookie(res, authToken) {
     sameSite: 'strict',
   });
 }
+
+const httpService = app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
 
 // Create a websocket object
 const socketServer = new WebSocketServer({ server, path: '/ws' });
