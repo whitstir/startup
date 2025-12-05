@@ -126,8 +126,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [x] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [x] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [x] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [x] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [x] **Application is fully functional** - Not really working
+- [x] **Backend listens for WebSocket connection** - Listens for the port and gets the backend pings and pongs
+- [x] **Frontend makes WebSocket connection** - Done!
+- [x] **Data sent over WebSocket connection** - Done!
+- [x] **WebSocket data displayed** - Chat displays
+- [x] **Application is fully functional** - Runs fantastic locally, but when deployed the website is completely blank - no network connection, nothing in the console, no sources, etc. TAs couldn't figure it out :(
